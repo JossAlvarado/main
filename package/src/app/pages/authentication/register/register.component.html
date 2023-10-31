@@ -1,3 +1,4 @@
+<body style="background-image: url('./assets/images/logos/fondo.jpg');"></body>
 <div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
   <div
     class="position-relative row w-100 h-100 bg-gredient justify-content-center"
@@ -8,7 +9,7 @@
           <div class="text-center">
             <a [routerLink]="['/dashboard']">
               <img
-                src="./assets/images/logos/dark-logo.svg"
+                src="./assets/images/logos/dark-logo.png"
                 class="align-middle m-2"
                 alt="logo"
               />
@@ -47,14 +48,20 @@
             </div>
           </div>
 
-          <div class="or-border m-t-30">Iniciar Sesiòn</div>
+          <div class="or-border m-t-30">Registrate ahora</div>
 
           <form class="m-t-30">
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
-              >Usuario</mat-label
+              >Nombre</mat-label
             >
             <mat-form-field appearance="outline" class="w-100" color="primary">
               <input matInput />
+            </mat-form-field>
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
+              >Correo electronico</mat-label
+            >
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput type="email" />
             </mat-form-field>
             <!-- password -->
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
@@ -64,26 +71,19 @@
               <input matInput type="password" />
             </mat-form-field>
 
-            <div class="d-flex align-items-center m-b-12">
-              <mat-checkbox color="primary">Olvide mi contraseña</mat-checkbox>
-              <a
-                [routerLink]="['/']"
-                class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
-                >Quieres recuperar tu contraseña?</a
-              >
-            </div>
             <a [routerLink]="['/']" mat-flat-button color="primary" class="w-100">
               Entrar
             </a>
             <!-- input -->
           </form>
           <span class="d-block f-w-500 text-center m-t-24"
-            >Nuevo Usuario?
+            >Ya tienes una cuenta?
+
             <a
-              [routerLink]="['/authentication/register']"
+              [routerLink]="['/authentication/login']"
               class="text-decoration-none text-primary f-w-500 f-s-14"
             >
-              Crear usuario</a
+              Iniciar sesión</a
             >
           </span>
         </mat-card-content>
