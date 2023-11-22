@@ -25,6 +25,7 @@ import {
 } from 'ng-apexcharts';
 
 interface month {
+
   value: string;
   viewValue: string;
 }
@@ -98,38 +99,38 @@ const ELEMENT_DATA: productsData[] = [
   {
     id: 1,
     imagePath: 'assets/images/profile/user-1.jpg',
-    uname: 'Mark J. Freeman',
-    position: 'English',
+    uname: 'Mark Freeman',
+    position: '1',
     hourRate: 150,
     classes: 53,
-    priority: 'Available',
+    priority: 'Activo',
   },
   {
     id: 2,
     imagePath: 'assets/images/profile/user-2.jpg',
     uname: 'Andrew McDownland',
-    position: 'Project Manager',
+    position: '2',
     hourRate: 150,
     classes: 68,
-    priority: 'In Class',
+    priority: 'Activo',
   },
   {
     id: 3,
     imagePath: 'assets/images/profile/user-3.jpg',
     uname: 'Christopher Jamil',
-    position: 'Project Manager',
+    position: '3',
     hourRate: 150,
     classes: 94,
-    priority: 'Absent',
+    priority: 'Activo',
   },
   {
     id: 4,
     imagePath: 'assets/images/profile/user-4.jpg',
     uname: 'Nirav Joshi',
-    position: 'Frontend Engineer',
+    position: '4',
     hourRate: 150,
-    classes: 27,
-    priority: 'On Leave',
+    classes: 10,
+    priority: 'Activo',
   },
 ];
 
@@ -159,6 +160,7 @@ export class AppDashboardComponent {
   displayedColumns: string[] = ['profile', 'hrate', 'exclasses', 'status'];
   dataSource = ELEMENT_DATA;
 
+
   months: month[] = [
     { value: 'mar', viewValue: 'March 2023' },
     { value: 'apr', viewValue: 'April 2023' },
@@ -172,6 +174,7 @@ export class AppDashboardComponent {
       time: '09.30 am',
       color: 'primary',
       subtext: 'Payment received from John Doe of $385.90',
+
     },
     {
       id: 2,
@@ -213,28 +216,28 @@ export class AppDashboardComponent {
     {
       id: 1,
       imgSrc: '/assets/images/products/p1.jpg',
-      title: 'Boat Headphone',
+      title: 'Nike',
       price: '285',
       rprice: '375',
     },
     {
       id: 2,
       imgSrc: '/assets/images/products/p2.jpg',
-      title: 'MacBook Air Pro',
+      title: 'Nike',
       price: '285',
       rprice: '375',
     },
     {
       id: 3,
       imgSrc: '/assets/images/products/p3.jpg',
-      title: 'Red Valvet Dress',
+      title: 'Nike',
       price: '285',
       rprice: '375',
     },
     {
       id: 4,
       imgSrc: '/assets/images/products/p4.jpg',
-      title: 'Cute Soft Teddybear',
+      title: 'Nike',
       price: '285',
       rprice: '375',
     },
