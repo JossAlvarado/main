@@ -1,11 +1,9 @@
-<!-- Primer mat-card para Estados -->
 <mat-card class="cardWithShadow theme-card">
   <mat-card-header>
     <mat-card-title>Estados</mat-card-title>
   </mat-card-header>
   <mat-card-content class="b-t-1">
     <div class="row">
-      <!-- Botones y menús para Estados aquí -->
       <div class="col-sm-3">
         <button mat-flat-button color="primary" class="w-100 m-b-4" [matMenuTriggerFor]="aboveMenu">
           Vendido
@@ -15,43 +13,33 @@
           <button mat-menu-item>Item 2</button>
         </mat-menu>
       </div>
-      <!-- Repite para los demás botones y menús -->
+      <div class="col-sm-3">
+        <button mat-flat-button color="accent" class="w-100 m-b-4" [matMenuTriggerFor]="belowMenu">
+          Perdidas
+        </button>
+        <mat-menu class="cardWithShadow" #belowMenu="matMenu" yPosition="below">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </div>
+      <div class="col-sm-3">
+        <button mat-flat-button color="warn" class="w-100 m-b-4" [matMenuTriggerFor]="beforeMenu">
+          Bajas
+        </button>
+        <mat-menu class="cardWithShadow" #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </div>
+      <div class="col-sm-3">
+        <button mat-flat-button color="primary" class="w-100 m-b-4" [matMenuTriggerFor]="afterMenu">
+          Pendientes
+        </button>
+        <mat-menu class="cardWithShadow" #afterMenu="matMenu" xPosition="after">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </div>
     </div>
-  </mat-card-content>
-</mat-card>
-
-<!-- Segundo mat-card para Registrar Venta de Zapatos -->
-<mat-card class="cardWithShadow theme-card">
-  <mat-card-header>
-    <mat-card-title>Registrar Venta de Zapatos</mat-card-title>
-  </mat-card-header>
-  <mat-card-content class="b-t-1">
-    <form [formGroup]="ventaForm" (ngSubmit)="registrarVenta()">
-      <div class="row">
-        <div class="col-sm-6">
-          <mat-form-field class="w-100 m-b-4">
-            <input matInput placeholder="Modelo de Zapatos" formControlName="modelo">
-            <mat-error *ngIf="ventaForm.get('modelo').hasError('required')">El modelo es obligatorio</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col-sm-6">
-          <mat-form-field class="w-100 m-b-4">
-            <input matInput type="number" placeholder="Número de Zapatos" formControlName="numeroZapatos" min="1">
-            <mat-error *ngIf="ventaForm.get('numeroZapatos').hasError('required')">El número de zapatos es obligatorio</mat-error>
-            <mat-error *ngIf="ventaForm.get('numeroZapatos').hasError('min')">El número de zapatos debe ser mayor a 0</mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <!-- Agrega más campos según sea necesario -->
-
-      <div class="row">
-        <div class="col-sm-12">
-          <button mat-flat-button color="primary" type="submit" [disabled]="ventaForm.invalid">
-            Registrar Venta
-          </button>
-        </div>
-      </div>
-    </form>
   </mat-card-content>
 </mat-card>
