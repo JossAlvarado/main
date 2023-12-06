@@ -24,7 +24,8 @@ import { SidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { HeaderComponent } from './layouts/full/header/header.component';
 import { BrandingComponent } from './layouts/full/sidebar/branding.component';
 import { AppNavItemComponent } from './layouts/full/sidebar/nav-item/nav-item.component';
-
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,9 @@ import { AppNavItemComponent } from './layouts/full/sidebar/nav-item/nav-item.co
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatMenuModule,
     TablerIconsModule.pick(TablerIcons),
     NgScrollbarModule,
   ],
