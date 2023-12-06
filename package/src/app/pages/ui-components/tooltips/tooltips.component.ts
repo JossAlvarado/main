@@ -6,13 +6,43 @@ import { FormControl } from '@angular/forms';
   templateUrl: './tooltips.component.html',
 })
 export class AppTooltipsComponent {
-  //  disabled
-  disabled = new FormControl(false);
+  // Existing properties...
 
-  // show and hide
-  showDelay = new FormControl(1000);
-  hideDelay = new FormControl(2000);
+  // Add the following properties for the user table
+  displayedColumns: string[] = ['profileImage', 'firstName', 'lastName', 'isEmployee'];
 
-  // change message
-  message = new FormControl('Info about the action');
+  // Replace the following data with your actual user data
+  userData: any[] = [
+    {
+      profileImage: 'path-to-image-1.jpg',
+      firstName: 'Jose Luis',
+      lastName: 'Galindo Picazo',
+      isEmployee: true,
+    },
+    {
+      profileImage: 'path-to-image-2.jpg',
+      firstName: 'Maria',
+      lastName: 'Rodriguez',
+      isEmployee: false,
+    },
+    {
+      profileImage: 'path-to-image-3.jpg',
+      firstName: 'John',
+      lastName: 'Smith',
+      isEmployee: true,
+    },
+    {
+      profileImage: 'path-to-image-3.jpg',
+      firstName: 'Josse',
+      lastName: 'Alvarado',
+      isEmployee: true,
+    },
+    {
+      profileImage: 'path-to-image-3.jpg',
+      firstName: 'Lesly',
+      lastName: 'Bonilla',
+      isEmployee: true,
+    },
+    // Add more users as needed
+  ];
 }
