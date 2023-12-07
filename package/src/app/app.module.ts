@@ -26,6 +26,8 @@ import { BrandingComponent } from './layouts/full/sidebar/branding.component';
 import { AppNavItemComponent } from './layouts/full/sidebar/nav-item/nav-item.component';
 //import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
+// Otros imports...
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,7 @@ import { MatMenuModule } from '@angular/material/menu';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule, // Este es el import que necesitas para HttpClient
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

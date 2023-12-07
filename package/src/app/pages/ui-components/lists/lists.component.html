@@ -68,7 +68,11 @@
   <mat-card-content class="b-t-1">
     <mat-card class="b-1 shadow-none">
       <mat-card-content>
-        <form>
+        <form id="registroForm">
+          <!-- Agregar campo ID -->
+          <label for="id">ID:</label><br>
+          <input type="text" id="id" name="id" readonly><br> <!-- Puedes establecer un valor predeterminado o permitir que el usuario lo ingrese -->
+
           <label for="nombre">Nombre:</label><br>
           <input type="text" id="nombre" name="nombre"><br>
           <label for="apellidos">Apellidos:</label><br>
@@ -79,10 +83,40 @@
           <input type="password" id="contraseña" name="contraseña"><br><br>
           <input type="submit" value="Registrar usuario">
         </form>
+        <script>
+          document.getElementById('registroForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar que el formulario se envíe de manera predeterminada
+        
+            const formData = {
+              id: document.getElementById('id').value,
+              nombre: document.getElementById('nombre').value,
+              apellidos: document.getElementById('apellidos').value,
+              correo: document.getElementById('correo').value,
+              contraseña: document.getElementById('contraseña').value,
+            };
+        
+            // Enviar los datos al backend
+            fetch('http://localhost:3000/users', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
+            })
+              .then(response => response.json())
+              .then(data => {
+                console.log('Respuesta del servidor:', data);
+                // Puedes manejar la respuesta del servidor aquí
+              })
+              .catch(error => {
+                console.error('Error al enviar datos al servidor:', error);
+                // Puedes manejar el error aquí
+              });
+          });
+        </script>        
       </mat-card-content>
     </mat-card>
   </mat-card-content>
 </mat-card>
-
 </body>
 </html>
